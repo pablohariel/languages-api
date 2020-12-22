@@ -1,14 +1,15 @@
 {
-  "name": "node_ts_structure_2020",
+  "name": "learn-languages",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.ts",
   "author": "pablohariel <pablohhdr@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts",
-    "test": "jest"
+    "test": "jest",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
@@ -33,6 +34,8 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.0",
+    "typeorm": "^0.2.29"
   }
 }
