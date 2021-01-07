@@ -1,6 +1,5 @@
 import Subject from '@models/Subject'
 import WordView from './WordView'
-import IdiomView from './IdiomView'
 
 export default {
   render (subject: Subject) {
@@ -8,8 +7,12 @@ export default {
       id: subject.id,
       name: subject.name,
       description: subject.description,
-      idiom: IdiomView.render(subject.idiom),
-      words: WordView.renderMany(subject.words)
+      words: subject.words && WordView.renderMany(subject.words),
+      idiom: {
+        id: subject.idiom.id,
+        name: subject.idiom.name,
+        size: subject.idiom.size
+      }
     }
   },
   renderMany (subjects: Subject[]) {

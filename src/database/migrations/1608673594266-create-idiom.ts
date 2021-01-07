@@ -19,36 +19,12 @@ export class createIdiom1608673594266 implements MigrationInterface {
           isNullable: false
         },
         {
-          name: 'subject_id',
-          type: 'integer'
-        },
-        {
-          name: 'word_id',
-          type: 'integer'
-        },
-        {
           name: 'size',
-          type: 'integer'
-        }
-      ],
-      foreignKeys: [
-        {
-          name: 'IdiomSubject',
-          columnNames: ['subject_id'],
-          referencedTableName: 'subjects',
-          referencedColumnNames: ['id'],
-          onUpdate: 'CASCADE',
-          onDelete: 'CASCADE'
-        },
-        {
-          name: 'IdiomWord',
-          columnNames: ['word_id'],
-          referencedTableName: 'words',
-          referencedColumnNames: ['id'],
-          onUpdate: 'CASCADE',
-          onDelete: 'CASCADE'
+          type: 'integer',
+          isNullable: true
         }
       ]
+
     }))
   }
 

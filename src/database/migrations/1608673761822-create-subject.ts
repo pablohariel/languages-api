@@ -19,12 +19,9 @@ export class createSubject1608673761822 implements MigrationInterface {
           isNullable: false
         },
         {
-          name: 'word_id',
-          type: 'integer'
-        },
-        {
           name: 'idiom_id',
-          type: 'integer'
+          type: 'integer',
+          isNullable: true
         },
         {
           name: 'description',
@@ -33,18 +30,12 @@ export class createSubject1608673761822 implements MigrationInterface {
       ],
       foreignKeys: [
         {
-          name: 'SubjectWord',
-          columnNames: ['word_id'],
-          referencedTableName: 'words',
-          referencedColumnNames: ['id'],
-          onUpdate: 'CASCADE',
-          onDelete: 'CASCADE'
-        },
-        {
           name: 'SubjectIdiom',
           columnNames: ['idiom_id'],
           referencedTableName: 'idioms',
-          referencedColumnNames: ['id']
+          referencedColumnNames: ['id'],
+          onUpdate: 'CASCADE',
+          onDelete: 'CASCADE'
         }
       ]
     }))

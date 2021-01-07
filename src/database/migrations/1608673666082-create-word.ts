@@ -20,15 +20,18 @@ export class createWord1608673666082 implements MigrationInterface {
         },
         {
           name: 'subject_id',
-          type: 'integer'
+          type: 'integer',
+          isNullable: true
         },
         {
           name: 'idiom_id',
-          type: 'integer'
+          type: 'integer',
+          isNullable: true
         },
         {
           name: 'phrases',
-          type: 'varchar'
+          type: 'varchar',
+          isNullable: true
         }
       ],
       foreignKeys: [
@@ -36,13 +39,17 @@ export class createWord1608673666082 implements MigrationInterface {
           name: 'WordSubject',
           columnNames: ['subject_id'],
           referencedTableName: 'subjects',
-          referencedColumnNames: ['id']
+          referencedColumnNames: ['id'],
+          onUpdate: 'CASCADE',
+          onDelete: 'CASCADE'
         },
         {
           name: 'WordIdiom',
           columnNames: ['idiom_id'],
           referencedTableName: 'idioms',
-          referencedColumnNames: ['id']
+          referencedColumnNames: ['id'],
+          onUpdate: 'CASCADE',
+          onDelete: 'CASCADE'
         }
       ]
     }))

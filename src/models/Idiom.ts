@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, JoinColumn } from 'typeorm'
-import Subject from '@models/Subject'
-import Word from '@models/Word'
+import Subject from './Subject'
+import Word from './Word'
 
 @Entity('idioms')
 export default class Idiom {
